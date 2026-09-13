@@ -11,7 +11,8 @@
 
   <!-- Open Graph / LinkedIn / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ai-scheduler-live.vercel.app/" />
+  <meta property="og:url" content="https://ai-scheduler-link.vercel.app/" />
+  <link rel="canonical" href="https://ai-scheduler-link.vercel.app/" />
   <meta property="og:title" content="Distributed AI Task Scheduler & Chaos Engine" />
   <meta property="og:description" content="Production-grade asynchronous NLP inference orchestrator with real-time telemetry matrix, dynamic autoscaling, and fault-tolerant chaos engineering." />
   <meta property="og:image" content="/preview.png" />
@@ -23,9 +24,6 @@
   <meta property="twitter:title" content="Distributed AI Task Scheduler & Chaos Engine" />
   <meta property="twitter:description" content="Production-grade asynchronous NLP inference orchestrator with real-time telemetry matrix and chaos engineering." />
   <meta property="twitter:image" content="/preview.png" />
-
-  <!-- Instant Browser Redirection -->
-  <meta http-equiv="refresh" content="0; url=http://15.252.100.5:8000/dashboard" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -194,8 +192,11 @@
   </div>
 
   <script>
-    // Execute instant redirection
-    window.location.replace("http://15.252.100.5:8000/dashboard");
+    // Execute instant redirection for human visitors (ignore crawlers/bots)
+    const isBot = /bot|crawler|spider|crawling|linkedin|facebook|twitter/i.test(navigator.userAgent);
+    if (!isBot) {
+      window.location.replace("http://15.252.100.5:8000/dashboard");
+    }
   </script>
 </body>
 </html>
