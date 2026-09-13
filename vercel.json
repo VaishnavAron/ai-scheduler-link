@@ -1,15 +1,13 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "headers": [
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "http://15.252.100.5:8000/dashboard"
+    },
     {
       "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, s-maxage=86400"
-        }
-      ]
+      "destination": "http://15.252.100.5:8000/$1"
     }
   ]
 }
